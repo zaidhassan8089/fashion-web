@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+  }
+  
+  :root {
+    --main-color: #f2a32b;
+    --light-orange: #fdc631;
+    --white-alfa-40: rgba(255, 255, 255, 0.40);
+    --white-alfa-25: rgba(255, 255, 255, 0.25); /* Corrected typo: "Regba" to "rgba" */
+    --backdrop-filter: blur(5px);
+    --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.40);
+  }
+  
+  body {
+    background-color: #f5f5f5;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  button,
+  input {
+     border: none;
+}
+.btn{
+    display: inline-block;
+    padding: .5rem 3rem;
+    margin: 1rem;
+    background-color: var(----main-color);
+    color: #e27f0e;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}
+.btn::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    background-color: #000;
+    left: 0;
+    top: 0;
+    transition: .5s;
+    z-index: -10; /* Changed z-index to -10 */
+}
+  
+.btn:hover::before {
+    height: 100%;
+}
+.empty {
+    border-radius: .5rem;
+    background-color: var(--white-alfa-25);
+    border: 2px solid var(--white-alfa-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    text-align: center;
+    line-height: 2; /* Corrected typo: "Line-height" to "line-height" */
+    color: var(--main-color); /* Corrected typo and added missing hyphen: "main color" to "main-color" */
+    margin: 1rem;
+}
+  
+.empty p {
+    font-size: 26px;
+    margin-block: 2rem;
+}
+  
+.line2 {
+    background-image: url('../image/3.png');
+    width: 100%;
+    height: 100px;
+    margin-top: -2.8rem;
+}
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    align-items: center;
+    justify-content: center;
+}
+  
+.box-container .box {
+    margin: 1rem;
+    border-radius: .5rem;
+}
+  
+.heading {
+    text-align: center;
+    line-height: 1.7; /* Corrected: list-style to line-height */
+}
+  
+.heading h1 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+  
+.heading span {
+    color: var(--main-color);
+    text-transform: capitalize;
+    font-size: 18px;
+}
+.heading img {
+    margin-top: .5rem;
+    width: 150px !important;
+}
+  
+.flex-btn {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.flex-btn .btn {
+    margin: .5rem;
+}
+  
+.banner {
+    margin-top: 0rem;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    animation: banner 4s infinite alternate;
+}
+@keyframes banner {
+    0% {
+      background-image: url('../image/banner0.jpg');
+    }
+    100% {
+      background-image: url('../image/banner1.jpg');
+    }
+}
+  
+.banner .detail {
+    padding-left: 4%;
+    line-height: 1.5;
+}
+  
+.banner .detail p {
+    font-size: 16px;
+    margin-block: 1rem;
+}
+  
+.banner .detail span {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-top: 1.1rem;
+
+}
+.banner .detail a {
+    color: #000;
+}
+  
+  .banner .detail span i {
+    margin: 0 1rem;
+}
+  
+  .banner .detail h1 {
+    font-size: 3rem;
+    color: #d88416;
+    text-transform: capitalize;
+}
+  
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    height: 50px;
+    background-color: var(--light-orange);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 20px;
+    height: 50px;
+    margin: 10px 30px;
+}
+/* Define root variables to ensure all `var()` values work */
+:root {
+    --main-color: #ff6f61;
+    --white-alfa-25: rgba(255, 255, 255, 0.25);
+    --white-alfa-40: rgba(255, 255, 255, 0.4);
+    --backdrop-filter: blur(10px);
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Container Styling */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    padding: 5% 0;
+    overflow: hidden;
+}
+
+/* Background Styling */
+.form {
+    background-image: url('../image/slider.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Image Styling */
+.form-img {
+    position: absolute;
+    left: 0;
+    width: 30%;
+    z-index: 0; /* Ensure visibility */
+}
+
+/* Form Styling */
+.form-container form {
+    background-color: var(--white-alfa-25);
+    border: 2px solid var(--white-alfa-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px; /* Added max width for responsiveness */
+    margin: 0 auto;
+}
+
+/* Register Form Specific Styles */
+.form-container .register {
+    max-width: 60rem;
+}
+
+.form-container .register .img-box {
+    text-align: center;
+}
+
+.form-container .register .img-box img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--main-color);
+}
+
+/* Form Header */
+.form-container form h3 {
+    text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Paragraph Styling */
+.form-container form p {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: capitalize;
+}
+
+.form-container form p span {
+    color: red;
+}
+
+/* Links */
+.form-container form .link {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.form-container form .link a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Input Fields */
+.form-container form .box {
+    background-color: var(--white-alfa-25);
+    border: 2px solid var(--white-alfa-40);
+    backdrop-filter: var(--backdrop-filter);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    border-radius: 0.5rem;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    font-size: 18px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus Styles */
+.form-container form .box:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+/* Textarea */
+.form-container form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+/* Form Layout Flexbox */
+.form-container form .flex {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    gap: 2rem;
+}
+
+.form-container form .flex .col {
+    flex: 1 1 25rem;
+}
+
+/* Buttons */
+.form-container .btn {
+    width: 100%;
+    font-size: 1.3rem;
+    padding: 1rem;
+    background-color: var(--main-color);
+    color: #a83b3b;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container .btn:hover {
+    background-color: #86201b;
+}
+
+.form-container .image {
+    height: 30rem;
+}
+/*-------header--section--------*/
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 80px;
+    box-shadow: 0 5px 10px 0 #aaa;
+    padding: 0 50px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .right{
+    display: flex;
+}
+#user-btn,
+.toggle-btn{
+    font-size: 2rem;
+    color: var(--main-color);
+    cursor: pointer;
+    transition: .6s;
+
+}
+header .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 2rem;
+    text-align: center;
+    width: 30rem;
+    transform: scale(1);
+    transform-origin: top right;
+    box-shadow: var(--box-shadow);
+    text-transform: capitalize;
+    transition: transform .4s linear;
+}
+
+header .profile.active {
+    transform: scale(1);
+}
+
+header .profile img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+    padding: .6rem;
+    background-color: var(--main-color);
+}
+
+header .flex .profile h3 {
+    font-size: 2rem;
+}
